@@ -123,61 +123,26 @@ if (!doNotTrack) {
     <script src="https://iamonuwa.github.io/js/app.js"></script>
     
     <script>
-        if('serviceWorker' in navigator) {
-    
-            
-
-            const PREFETCH = true;
-    
-            
-
-            const PREFETCH_LINK_RELS = ['index','next', 'prev', 'prefetch'];
-    
-            
-
-            function prefetchCache() {
-                if(navigator.serviceWorker.controller) {
-    
-                    let links = document.querySelectorAll(
-                        PREFETCH_LINK_RELS.map((rel) => {
-                            return 'link[rel='+rel+']';
-                        }).join(',')
-                    );
-    
-                    if(links.length > 0) {
-                        Array.from(links)
-                            .map((link) => {
-                                let href = link.getAttribute('href');
-                                navigator.serviceWorker.controller.postMessage({
-                                    action : 'cache',
-                                    url : href,
-                                });
-                            });
-                    }
-    
-    
-                }
+        window.addEventListener('load', function () {
+            if ('serviceworker' in navigator) {
+                navigator.serviceWorker.register('sw.js', {scope: './'})
+                    .then(function(r) {
+                        console.log('Service worker has been installed.');
+                    }).catch(function(e) {
+                        console.error('An error occured ', e);
+                    });
             }
-    
-            
-
-            navigator.serviceWorker
-                .register('/sw.js', { scope: '/' })
-                .then(() => {
-                    console.log('Service Worker Registered');
-                });
-    
-            
-
-            navigator.serviceWorker
-                .ready
-                .then(() => {
-                    if(PREFETCH) {
-                        prefetchCache();
-                    }
-                });
-    
-        }
+        });
+        window.addEventListener('beforeinstallprompt', function(e) {
+            e.userChoice.then(function(choice) {
+                console.log('User choice ', choice);
+                if (choice.outcome == 'dismissed') {
+                    console.log('User cancelled homescreen install');
+                } else {
+                    console.log('User added website to homescreen');
+                }
+            })
+        })
     </script>
     
 </body>
