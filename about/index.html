@@ -49,6 +49,7 @@
     
 
     <meta name="generator" content="Hugo 0.49.2" />
+    <noscript>Please enable JavaScript 😭</noscript>
 </head>
 
 <body class="">
@@ -177,7 +178,20 @@ if (!doNotTrack) {
             if ('serviceWorker' in navigator) {
                 navigator.serviceWorker.register('sw.js', {scope: './'})
                     .then(function(r) {
-                        console.log('Service worker has been installed.');
+                        r.onupdatefound(function() {
+                            var worker = r.installing;
+                            worker.onstatechange(function() {
+                                switch(worker.state) {
+                                    case 'installed':
+                                        if (navigator.serviceWorker.controller) {
+                                            return true;
+                                        } else {
+                                            return false;
+                                        }
+                                        break;
+                                }
+                            })
+                        }).catch(err => console.error('[SW ERROR]', err));
                     }).catch(function(e) {
                         console.error('An error occured ', e);
                     });
