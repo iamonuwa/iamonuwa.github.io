@@ -128,20 +128,7 @@ if (!doNotTrack) {
             if ('serviceWorker' in navigator) {
                 navigator.serviceWorker.register('sw.js', {scope: './'})
                     .then(function(r) {
-                        r.onupdatefound(function() {
-                            var worker = r.installing;
-                            worker.onstatechange(function() {
-                                switch(worker.state) {
-                                    case 'installed':
-                                        if (navigator.serviceWorker.controller) {
-                                            return true;
-                                        } else {
-                                            return false;
-                                        }
-                                        break;
-                                }
-                            })
-                        }).catch(err => console.error('[SW ERROR]', err));
+                        console.log('Service worker registered.');
                     }).catch(function(e) {
                         console.error('An error occured ', e);
                     });
