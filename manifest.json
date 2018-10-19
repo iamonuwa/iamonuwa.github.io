@@ -1,9 +1,9 @@
 {
+  "name": "Onuwa Nnachi Isaac",
+  "short_name": "iamonuwa",
   "theme_color": "#2196f3",
   "background_color": "#2196f3",
   "display": "standalone",
-  "name": "Onuwa Nnachi Isaac",
-  "short_name": "iamonuwa",
   "Scope": "/",
   "start_url": "/",
   "icons": [

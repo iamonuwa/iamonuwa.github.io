@@ -144,7 +144,7 @@ if (!doNotTrack) {
     
     <script>
         window.addEventListener('load', function () {
-            if ('serviceworker' in navigator) {
+            if ('serviceWorker' in navigator) {
                 navigator.serviceWorker.register('sw.js', {scope: './'})
                     .then(function(r) {
                         console.log('Service worker has been installed.');
