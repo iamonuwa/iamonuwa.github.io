@@ -36,5 +36,14 @@ Some of the languages I use/write
 Have questions or suggestions? Feel free to ask me on Twitter.</description>
     </item>
     
+    <item>
+      <title>Oopss, you are offline.</title>
+      <link>https://iamonuwa.github.io/offline/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://iamonuwa.github.io/offline/</guid>
+      <description>You should try to find some internet connection to browse here.</description>
+    </item>
+    
   </channel>
 </rss>

@@ -16,6 +16,10 @@
   </url>
   
   <url>
+    <loc>https://iamonuwa.github.io/offline/</loc>
+  </url>
+  
+  <url>
     <loc>https://iamonuwa.github.io/tags/</loc>
     <priority>0</priority>
   </url>

@@ -20,7 +20,6 @@
     <meta name="twitter:image" content="https://iamonuwa.github.ioimages/tn.png">
     <meta name="google-site-verification" content="yIEJ2fg-8BeipWJgU-air5YwTXgYtfc3dgm7CUzAC-g" />
 
-
     <base href="https://iamonuwa.github.io">
     <title>iamonuwa</title>
 
@@ -31,6 +30,7 @@
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,700|Source+Code+Pro:400,700" rel="stylesheet">
     <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
     <link rel="stylesheet" href="https://iamonuwa.github.io/css/style.min.css">
+    <link rel="manifest" href="/manifest.json">
 
     
 
@@ -140,15 +140,62 @@ if (!doNotTrack) {
   <script src="https://iamonuwa.github.io/js/app.js"></script>
   
   <script>
-  (function($) {
-    $(function() {
-      $('#privateTrigger').on('click', function() {
-        $('.private').slideToggle();
-        $('#privateTriggerText').text("Thank You! Please share it if you like it→");
-      });
-    });
-   })(jQuery);
-  </script>
+    if('serviceWorker' in navigator) {
+
+        
+
+        const PREFETCH = true;
+
+        
+
+        const PREFETCH_LINK_RELS = ['index','next', 'prev', 'prefetch'];
+
+        
+
+        function prefetchCache() {
+            if(navigator.serviceWorker.controller) {
+
+                let links = document.querySelectorAll(
+                    PREFETCH_LINK_RELS.map((rel) => {
+                        return 'link[rel='+rel+']';
+                    }).join(',')
+                );
+
+                if(links.length > 0) {
+                    Array.from(links)
+                        .map((link) => {
+                            let href = link.getAttribute('href');
+                            navigator.serviceWorker.controller.postMessage({
+                                action : 'cache',
+                                url : href,
+                            });
+                        });
+                }
+
+
+            }
+        }
+
+        
+
+        navigator.serviceWorker
+            .register('/sw.js', { scope: '/' })
+            .then(() => {
+                console.log('Service Worker Registered');
+            });
+
+        
+
+        navigator.serviceWorker
+            .ready
+            .then(() => {
+                if(PREFETCH) {
+                    prefetchCache();
+                }
+            });
+
+    }
+</script>
   
   </body>
 </html>
