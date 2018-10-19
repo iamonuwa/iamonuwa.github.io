@@ -1,22 +1,24 @@
 const CACHE_VERSION = 1;
 
 const BASE_CACHE_FILES = [
-    '/style.css',
-    '/script.js',
-    '/search.json',
     '/manifest.json',
-    '/favicon.png',
+    '/images/favicon-16x16.png',
+    '/css/style.min.css',
+    '/css/style-rtl.min.css',
+    '/js/app.js'
 ];
 
 const OFFLINE_CACHE_FILES = [
-    '/style.css',
-    '/script.js',
+    '/css/style.min.css',
+    '/css/style-rtl.min.css',
+    '/js/app.js',
     '/offline/index.html',
 ];
 
 const NOT_FOUND_CACHE_FILES = [
-    '/style.css',
-    '/script.js',
+    '/css/style.min.css',
+    '/css/style-rtl.min.css',
+    '/js/app.js',
     '/404.html',
 ];
 
