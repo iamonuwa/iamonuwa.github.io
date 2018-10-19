@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/iamonuwa
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://iamonuwa.github.io
+  * I am iamonuwa (https://keybase.io/iamonuwa) on keybase.
+  * I have a public key ASAIThzMZxVJ1hCqaAE4QoVZJeYcvJJjzUOYigYJZEWMmQo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120084e1ccc671549d610aa68013842855925e61cbc9263cd43988a060964458c990a",
+      "host": "keybase.io",
+      "kid": "0120084e1ccc671549d610aa68013842855925e61cbc9263cd43988a060964458c990a",
+      "uid": "1c175ccf32f1eeb56dc019115230b119",
+      "username": "iamonuwa"
+    },
+    "merkle_root": {
+      "ctime": 1539946848,
+      "hash": "4adc9633b47f04fd9569ba15ab43f6cb1bcdc8fc1ccb84aeb696a0a80f6223185ca75c749d86fb6befa8668a3bb824b8207ef3be3fcaf4732d6c8e4004229b6a",
+      "hash_meta": "11ca1b7249a4d26080a96ba06270a3f623ca61c7881bfbf47e737aa1545603a4",
+      "seqno": 3820087
+    },
+    "service": {
+      "entropy": "LXNjiFPxx3EIu4hNdZPVZX7m",
+      "hostname": "iamonuwa.github.io",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "2.8.0"
+  },
+  "ctime": 1539946853,
+  "expire_in": 504576000,
+  "prev": "7eb698047d34bd7b5ca39e131737fd6431a9c8f5268da3efec1d5351e7dbfdf8",
+  "seqno": 23,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgCE4czGcVSdYQqmgBOEKFWSXmHLySY81DmIoGCWRFjJkKp3BheWxvYWTESpcCF8QgfraYBH00vXtco54TFzf9ZDGpyPUmjaPv7B1TUefb/fjEIDjeGvVecX4xgsoUQTFm96Cjf3FSwBUf4vD+0tcUKYdJAgHCo3NpZ8RAOz4+rA1NCls8tdJdp85BD8o8Hpw7g9aKuUBkl53cvsg5TCaa2PEeojFvuUQGHQwyP0wHmNzui9GGw0XuWZG9DqhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIJ7U5CoVQrFKVUWWjE9fy8skQSFU8PFtnUAnVBJK8ca9o3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/iamonuwa
+
+==================================================================
