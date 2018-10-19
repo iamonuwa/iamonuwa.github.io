@@ -148,7 +148,6 @@ if (!doNotTrack) {
         });
         window.addEventListener('beforeinstallprompt', function(e) {
             e.userChoice.then(function(choice) {
-                console.log('User choice ', choice);
                 if (choice.outcome == 'dismissed') {
                     console.log('User cancelled homescreen install');
                 } else {
